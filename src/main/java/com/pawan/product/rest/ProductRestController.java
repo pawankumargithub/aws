@@ -1,6 +1,8 @@
 package com.pawan.product.rest;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,6 @@ public class ProductRestController {
 	@GetMapping("/products")
 	public List<Product> findAllProducts() {
 
-		return productService.getAllProducts();
+		return productService.getAllProducts().stream().sorted(Comparator.comparing(Product::getPrice)).collect(Collectors.toList());
 	}
 }
