@@ -49,6 +49,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>prodcut-service</finalName>
 	</build>
 
 </project>
